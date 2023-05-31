@@ -11,7 +11,7 @@ getDateString=()=> {
     var hour = date.getHours();
     var minutes = date.getMinutes();
     var seconds = date.getSeconds();
-    return `${year}-${month}-${day}-${hour}-${minutes}-${seconds}` 
+    return `${year},${month} ${day}, ${hour}-${minutes}-${seconds}` 
 }
 
 
@@ -23,7 +23,7 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 
-fs.writeFile(`./files/${data}.txt`, `Date:${data} Time:${time}`,
+fs.writeFile(`./files/${data}.txt`, `Date--${data} && Timestamp--${time}`,
  (err) => console.log("hi there project success"));
 
 fs.readFile(`./files/${data}.txt`, "utf-8", (err, data) => { 
