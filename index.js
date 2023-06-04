@@ -14,11 +14,18 @@ getDateString = () => {
     const date = new Date();
     // Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel .
     let d = weekday[date.getDay()];
-    let m = monthNamelist[1+(date.getDay())];
     var currentTimeInSeconds = Math.floor(Date.now() / 1000);
     const year = date.getFullYear();
     // Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel .
     const month = `${date.getMonth() + 1}`.padStart(2, '0');
+    let temp1 = month.split('');
+    let n = [];
+    for(let i = 0; i < temp1.length; i++ ){
+        if(temp1[i]!=0){
+            n.push(temp1[i]);
+        }
+    }
+    let m = monthNamelist[n.join('')];
     const day = `${date.getDate()}`.padStart(2, '0');
     var hour = date.getHours();
     // Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel .
