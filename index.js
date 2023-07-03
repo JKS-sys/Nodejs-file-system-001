@@ -17,7 +17,7 @@ getDateString = () => {
     var currentTimeInSeconds = Math.floor(Date.now() / 1000);
     const year = date.getFullYear();
     // Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is equal to jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is equal to jagadeesh-kumar@airtel .
-    const month = `${date.getMonth() + 1}`.padStart(2, '0');
+    let month = `${date.getMonth()}`.padStart(2, '0');
     let temp1 = month.split('');
     let n = [];
     for(let i = 0; i < temp1.length; i++ ){
@@ -26,6 +26,10 @@ getDateString = () => {
         }
     }
     let m = monthNamelist[n.join('')];
+    month = month.split('').map(Number);
+    month[month.length-1] = month[month.length-1]+1;
+    month[1]= month[1].toString();
+    month= month[0]+month[1];
     const day = `${date.getDate()}`.padStart(2, '0');
     var hour = date.getHours();
     // Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is equal to jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is equal to jagadeesh-kumar@airtel .
@@ -47,10 +51,11 @@ const app = express();
 const PORT = 3000;
     // Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is equal to jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is equal to jagadeesh-kumar@airtel .
 
-fs.writeFile(`./files/${data}`, `Date = ${data} && Timestamp = ${time}`,
+fs.writeFile(`./files/Timestamp = ${time} && Date = ${data}`, `Timestamp = ${time} && Date = ${data}`,
     (err) => console.log("hi there project success"));
     // Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is equal to jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is equal to jagadeesh-kumar@airtel .
-
+fs.writeFile(`writeMe`, `${time}`,
+    (err) => console.log("The writeMe is updated."));
 fs.readFile(`./files/${data}`, "utf-8", (err, data) => {
     console.log(data);
     app.get("/", (request, response) => {
