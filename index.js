@@ -18,18 +18,19 @@ getDateString = () => {
     const year = date.getFullYear();
     // Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is equal to jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is equal to jagadeesh-kumar@airtel .
     let month = `${date.getMonth()}`.padStart(2, '0');
-    let temp1 = month.split('');
-    let n = [];
-    for(let i = 0; i < temp1.length; i++ ){
-        if(temp1[i]!=0){
-            n.push(temp1[i]);
-        }
-    }
-    let m = monthNamelist[n.join('')];
+    // let temp1 = month.split('');
+    // let n = [];
+    // for(let i = 0; i < temp1.length; i++ ){
+    //     if(temp1[i]!=0){
+    //         n.push(temp1[i]);
+    //     }
+    // }
+    // let m = monthNamelist[n.join('')];
     month = month.split('').map(Number);
     month[month.length-1] = month[month.length-1]+1;
     month[1]= month[1].toString();
     month= month[0]+month[1];
+    let m = monthNamelist[month-1];
     const day = `${date.getDate()}`.padStart(2, '0');
     var hour = date.getHours();
     // Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is equal to jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is equal to jagadeesh-kumar@airtel .
