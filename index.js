@@ -80,7 +80,7 @@ fs.writeFile(
 // Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is equal to jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is equal to jagadeesh-kumar@airtel .
 fs.writeFile(`writeMe`, `${time}`, (err) => {
   console.log("The writeMe is updated.");
-  process.stop();
+  process.exit(0);
 });
 fs.readFile(`./files/${data}`, "utf-8", (err, data) => {
   console.log(data);
